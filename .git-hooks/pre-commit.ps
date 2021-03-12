@@ -1,0 +1,1 @@
+,@(git diff HEAD --name-only --diff-filter=ACM | Select-String '.[j|t]s$') | %{&"node ./node_modules/eslint/bin/eslint.js --quiet" $_}
