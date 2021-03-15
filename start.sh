@@ -1,10 +1,11 @@
 #!/bin/bash
+npm install -g @angular/cli
 cd backend
 echo 'Installing backend dependencies...'
 npm install
 npm run build
 echo 'Starting server...'
-npm start
+sudo npm start
 cd ../frontend/
 echo 'Installing frontend dependencies...'
 npm install
