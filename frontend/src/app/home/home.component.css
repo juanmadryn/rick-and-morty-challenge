@@ -1,0 +1,7 @@
+.main-div {
+  opacity: .85;
+  background-color: #FFF;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}

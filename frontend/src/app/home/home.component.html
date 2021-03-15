@@ -1,0 +1,49 @@
+<div class="main-div col-md-10 offset-md-1">
+  <div class="card col-md-12 float-left mt-2">
+    <h1>{{title}}</h1>
+    <a target="_blank" href="https://github.com/juanmadryn/rick-and-morty-challenge"><h2>Repositorio: <i class="fa fa-github"></i></h2></a>
+  </div>
+  <div class="card col-md-12 float-left mt-2">
+    <div class="card-body">
+      <h2>Contadores</h2>
+      <span [hidden]="!countersData.timeOfExecution">Tiempo de ejecución: {{countersData.timeOfExecution}}</span>
+      <span [hidden]="countersData.timeOfExecution">Cargando...</span>
+    </div>
+  </div>
+  <div class="col-md-12 mt-2">
+    <div class="card col-md-4 float-left">
+      <div class="card-body">
+        <h5 class="card-title">Cantidad de letras <b>l</b> en nombres de locations</h5>
+        <h1 class="text-center">{{countersData.counters.countOfLInLocationsName}}</h1>
+      </div>
+    </div>
+    <div class="card col-md-4 float-left">
+      <div class="card-body">
+        <h5 class="card-title">Cantidad de letras <b>e</b> en nombres de episodes</h5>
+        <h1 class="text-center">{{countersData.counters.countOfEInEpisodesName}}</h1>
+      </div>
+    </div>
+    <div class="card col-md-4 float-left">
+      <div class="card-body">
+        <h5 class="card-title">Cantidad de letras <b>c</b> en nombres de characters</h5>
+        <h1 class="text-center">{{countersData.counters.countOfCInCharactersName}}</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="card col-md-12 float-left mt-2">
+    <div class="card-body">
+      <h2 class="card-title">Listado de episodios</h2>
+      <span [hidden]="!episodesData.timeOfExecution">Tiempo de ejecución: {{episodesData.timeOfExecution}}</span>
+      <span [hidden]="episodesData.timeOfExecution">Cargando...</span>
+    </div>
+  </div>
+  <div class="col-md-12 mt-2">
+    <div class="card col-md-3 float-left mb-1" *ngFor="let episode of episodesData.episodes">
+      <div class="card-body">
+        <h4 class="card-title">{{episode.name}}</h4>
+        <b>Locations</b>: {{episode.locations.join(', ')}}
+      </div>
+    </div>
+  </div>
+</div>

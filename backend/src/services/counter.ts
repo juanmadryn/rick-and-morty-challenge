@@ -1,4 +1,5 @@
 import { Counters } from '../types/counter';
+import { count } from '../utils/countUtils';
 import CharactersService from './characters';
 import EpisodeService from './episodes'
 import LocationsService from './locations';
@@ -12,9 +13,9 @@ export const countCharOccurrencesInEntityNames = async (): Promise<Counters> => 
     
     let [episodes, locations, characters] = await Promise.all([episodesService.findByChar('e'), locationsService.findByChar('l'), charactersService.findByChar('c')]);
     
-    let countOfCharEInEpisodesNames = (episodes.reduce((prev, next) => {return prev + (""+next.name)}, '').match(/e/gi)||[]).length;
-    let countOfCharLInLocationsNames = (locations.reduce((prev, next) => {return prev + (""+next.name)}, '').match(/l/gi)||[]).length;
-    let countOfCharCInCharactersNames = (characters.reduce((prev, next) => {return prev + (""+next.name)}, '').match(/c/gi)||[]).length;
+    let countOfCharEInEpisodesNames = count(episodes.reduce((prev, next) => {return prev + (""+next.name)}, ''), "e");
+    let countOfCharLInLocationsNames = count(locations.reduce((prev, next) => {return prev + (""+next.name)}, ''), "l");
+    let countOfCharCInCharactersNames = count(characters.reduce((prev, next) => {return prev + (""+next.name)}, ''), "c");
 
     let result: Counters = {
         countOfEInEpisodesName: countOfCharEInEpisodesNames,

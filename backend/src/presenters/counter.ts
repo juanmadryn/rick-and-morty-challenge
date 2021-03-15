@@ -9,7 +9,7 @@ import { CounterResult, Counters } from "../types/counter";
 })
 @tagsAll(["Counter"])
 export default class CounterPresenter {
-  @request("get", "/count")
+  @request("get", "/api/count")
   @summary("count char occurrences in entity names")
   public static async countCharOccurrencesInEntityNames(
     ctx: BaseContext

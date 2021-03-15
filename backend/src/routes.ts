@@ -1,7 +1,9 @@
 import { SwaggerRouter } from "koa-swagger-decorator";
 import { counter, episodes } from "./presenters";
 
-const routes = new SwaggerRouter();
+const routes = new SwaggerRouter({
+    prefix: '/api'
+});
 
 // ROUTES
 routes.get("/count", counter.countCharOccurrencesInEntityNames);
