@@ -1,9 +1,13 @@
 #!/bin/bash
 cd backend
+echo 'Installing backend dependencies...'
 npm install
 npm run build
+echo 'Starting server...'
 npm start
 cd ../frontend/
+echo 'Installing frontend dependencies...'
 npm install
 ng build
-mv dist/rick-and-morty-challenge ../backend/public
+rm -rf ../backend/public/*
+cp dist/rick-and-morty-challenge/* ../backend/public/
