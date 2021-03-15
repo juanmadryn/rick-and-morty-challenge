@@ -14,14 +14,14 @@ export default class EpisodesPresenter {
   public static async getEpisodesData(ctx: BaseContext): Promise<void> {
     try {
       // moment of execution's start
-      var hrstart = process.hrtime();
+      const hrstart = process.hrtime();
 
       // I get all the episodes
-      let episodesService: EpisodeService = new EpisodeService();
-      let allEpisodes: EpisodeFromApi[] = await episodesService.findAll();
+      const episodesService: EpisodeService = new EpisodeService();
+      const allEpisodes: EpisodeFromApi[] = await episodesService.findAll();
       // ... and map every episode to expected format ({name: 'episode', locations: ['location1', 'location2']}) 
-      let episodesData: EpisodesData[] = <EpisodesData[]>allEpisodes.map((episode) => {
-        let episodeData: EpisodesData = {
+      const episodesData: EpisodesData[] = <EpisodesData[]>allEpisodes.map((episode) => {
+        const episodeData: EpisodesData = {
           name: episode.name,
           locations: episode.characters.reduce((prev, next) => {
             if(prev.indexOf(next.origin.name) == -1) {
@@ -33,9 +33,9 @@ export default class EpisodesPresenter {
         return episodeData;
       });
       // moment of execution's end
-      let hrend = process.hrtime(hrstart);
+      const hrend = process.hrtime(hrstart);
 
-      let result: EpisodesResult = {
+      const result: EpisodesResult = {
         episodes: episodesData,
         timeOfExecution: hrend[0]+'s.' + hrend[1]
       }

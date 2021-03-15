@@ -16,12 +16,12 @@ export default class CounterPresenter {
   ): Promise<void> {
     try {
        // moment of execution's start
-      let hrstart = process.hrtime();
+      const hrstart = process.hrtime();
        // I get the counters
-      let counters: Counters = await countCharOccurrencesInEntityNames();
+      const counters: Counters = await countCharOccurrencesInEntityNames();
       // momento of execution's end
-      let hrend = process.hrtime(hrstart);
-      let result: CounterResult = {
+      const hrend = process.hrtime(hrstart);
+      const result: CounterResult = {
         counters: counters,
         timeOfExecution: hrend[0]+'s.' + hrend[1]
       }

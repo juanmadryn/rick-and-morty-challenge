@@ -6,7 +6,11 @@ import { Counters } from '../../../src/types/counter';
 
 @binding()
 class CountLettersSteps {
-  private result: Counters;
+  private result: Counters = {
+    countOfEInEpisodesName: 0,
+    countOfLInLocationsName: 0,
+    countOfCInCharactersName: 0
+  };
   @given("el servicio de recuperación de datos de la API de Rick And Morty")
   public givenRickAndMortyAPIService() {
     //empty
@@ -15,8 +19,8 @@ class CountLettersSteps {
 
   @when("se cuentan las letras e en los nobres de episodios, las letras l en los nombres de ubicaciones y las letras c en los de personajes")
   public whenCountLettersInTheirNames() {
-    let resp = syncrequest('GET', 'http://localhost:3000/count');
-    let result = JSON.parse(resp.getBody('utf8'));
+    const resp = syncrequest('GET', 'http://127.0.0.1:3000/api/count');
+    const result = JSON.parse(resp.getBody('utf8'));
     delete result.timeOfExecution;
     this.result = <Counters> result;
     return true;
@@ -24,7 +28,7 @@ class CountLettersSteps {
 
   @then("se obtiene la siguiente respuesta")
   public thenItIsObtainedTheFollowingAnswer(counters: string) {
-    let expectedResult = JSON.parse(counters);
+    const expectedResult = JSON.parse(counters);
     return assert.equal(undefined, jsondiff.diff(expectedResult, this.result));
   }
 }

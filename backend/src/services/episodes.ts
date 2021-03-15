@@ -60,7 +60,7 @@ export default class EpisodeService implements ServiceInterface {
       })
     );
 
-    let allEpisodes = firstPage.episodes.results.concat(
+    const allEpisodes = firstPage.episodes.results.concat(
       remainingPages.reduce((prev, next) => {
         return prev.concat(next.episodes.results);
       }, <EpisodeFromApi[]>[])
@@ -86,7 +86,7 @@ export default class EpisodeService implements ServiceInterface {
       })
     );
 
-    let allEpisodes = firstPage.episodes.results.concat(
+    const allEpisodes = firstPage.episodes.results.concat(
       remainingPages.reduce((prev, next) => {
         return prev.concat(next.episodes.results);
       }, <EpisodeFromApi[]>[])

@@ -1,10 +1,10 @@
 import { Context } from "koa";
-import { config } from "./config";
+import { default as config } from "./config/app.config";
 import { transports, format } from "winston";
 
 const logger = (winstonInstance: any): any  => {
     winstonInstance.configure({
-        level: config.debugLogging ? "debug" : "info",
+        level: config.APP_DEBUG ? "debug" : "info",
         transports: [
             //
             // - Write all logs error (and below) to `error.log`.

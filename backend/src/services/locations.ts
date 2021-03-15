@@ -42,7 +42,7 @@ export default class LocationsService implements ServiceInterface {
       })
     );
 
-    let allLocation = firstPage.locations.results.concat(
+    const allLocation = firstPage.locations.results.concat(
       remainingPages.reduce((prev, next) => {
         return prev.concat(next.locations.results);
       }, <LocationFromApi[]>[])

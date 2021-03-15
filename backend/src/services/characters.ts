@@ -42,7 +42,7 @@ export default class CharactersService implements ServiceInterface {
       })
     );
 
-    let allCharacter = firstPage.characters.results.concat(
+    const allCharacter = firstPage.characters.results.concat(
       remainingPages.reduce((prev, next) => {
         return prev.concat(next.characters.results);
       }, <CharacterFromApi[]>[])
