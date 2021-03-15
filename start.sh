@@ -10,5 +10,6 @@ cd ../frontend/
 echo 'Installing frontend dependencies...'
 npm install
 ng build
+mkdir ../backend/public
 rm -rf ../backend/public/*
 cp dist/rick-and-morty-challenge/* ../backend/public/
