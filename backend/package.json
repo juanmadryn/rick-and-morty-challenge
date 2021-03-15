@@ -11,8 +11,7 @@
     "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix",
     "serve": "node dist/server.js",
     "build": "npm run lint && npm run build-ts",
-    "start": "npm run serve",
-    "prepare": "husky install"
+    "start": "npm run serve"
   },
   "repository": {
     "type": "git",
