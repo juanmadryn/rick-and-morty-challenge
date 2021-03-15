@@ -178,7 +178,7 @@ Característica: Contar letras en nombres
         }
 	]}
 	"""
-    Cuando se cuentas las letras l en sus nombres
+    Cuando se cuentan las letras l en sus nombres
     Entonces se obtiene como respuesta 73
 
 	Escenario: Contar letras e's en episodios

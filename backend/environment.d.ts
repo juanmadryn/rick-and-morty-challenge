@@ -2,7 +2,8 @@
 declare global {
     namespace NodeJS {
       interface ProcessEnv {
-        NODE_ENV: string
+        NODE_ENV: string,
+        RICK_AND_MORTY_API_URL: string
       }
     }
   }
