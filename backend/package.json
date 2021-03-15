@@ -34,14 +34,17 @@
   "homepage": "https://github.com/juanmadryn/rick-and-morty-challenge#readme",
   "dependencies": {
     "@cucumber/cucumber": "^7.0.0",
+    "@types/json-diff": "^0.5.1",
     "dotenv": "^8.2.0",
     "env-cmd": "^10.1.0",
     "graphql": "^15.5.0",
     "graphql-request": "^3.4.0",
+    "json-diff": "^0.5.4",
     "koa": "^2.13.1",
     "koa-bodyparser": "^4.3.0",
     "koa-router": "^10.0.0",
     "koa-swagger-decorator": "^1.7.4",
+    "sync-request": "^6.1.0",
     "winston": "^3.3.3"
   },
   "devDependencies": {
