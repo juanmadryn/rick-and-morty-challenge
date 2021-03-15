@@ -25,12 +25,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.counterService.get().subscribe((data) => {
-      console.log(data);
       this.countersData = <CounterResult> data;
     });
 
     this.episodesService.get().subscribe((data) => {
-      console.log(data);
       this.episodesData = <EpisodesResult> data;
     });
   }
